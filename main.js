@@ -131,14 +131,30 @@ for(let i = 0; i < posts.length; i++){
 2. Al click su un pulsante “Mi Piace” di un post, incrementare il contatore di like al post e cambiare colore al testo del bottone disattivando il pulsante
  */
 
+
+//definisco un contatore di like
+let like = 80;
+
+console.log('numero like:',like);
 //aggancio il pulsante “Mi Piace” e gli aggiungo l'evento click
 
 const btnLikes = document.querySelector('.like-button');
 btnLikes.addEventListener('click',function(){
     console.log('click');
+    //se clicco sul btnLike do un like
+    //aggancio l'id dei likes
+    //const like = document.getElementById('like-counter-1');
+    //console.log('like',like);
+
+    like++;
+
+
 
 })
 
+
+
+//l'evento click non funziona piu e di conseguenza non aumento piu il numero dei likes
 
  
 
