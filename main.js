@@ -118,21 +118,26 @@ for(let i = 0; i < posts.length; i++){
                 </div> 
             </div>            
         </div>
-    
-    
     `;
-
-
-
-
-
 
     //appendo al container il post
     container.append(post);
 }
 
 
+/**
+ ****BONUS:**
+1. Rendiamo il tasto “Mi Piace” cliccabile con incremento del counter dei likes.
+2. Al click su un pulsante “Mi Piace” di un post, incrementare il contatore di like al post e cambiare colore al testo del bottone disattivando il pulsante
+ */
 
+//aggancio il pulsante “Mi Piace” e gli aggiungo l'evento click
+
+const btnLikes = document.querySelector('.like-button');
+btnLikes.addEventListener('click',function(){
+    console.log('click');
+
+})
 
 
  
