@@ -95,14 +95,14 @@ for(let i = 0; i < posts.length; i++){
                         <img class="profile-pic" src="${posts[i].media}"alt="Phil Mangione">                    
                     </div>
                     <div class="post-meta__data">
-                        <div class="post-meta__author">${posts[i].name}</div>
+                        <div class="post-meta__author">${posts[i].author.name}</div> 
                         <div class="post-meta__time">${posts[i].created}</div>
                     </div>                    
                 </div>
             </div>
             <div class="post__text">${posts[i].content}.</div>
             <div class="post__image">
-                <img src="https://unsplash.it/600/300?image=171" alt="">
+                <img src="${posts[i].author.image}" alt=""> 
             </div>
             <div class="post__footer">
                 <div class="likes js-likes">
