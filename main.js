@@ -65,21 +65,41 @@ console.log(posts);
 - Sotto al nome NON inseire il calcolo della data (es 4 mesi fa) ma la data i formato italiano (GG/MM/AAAA)
  */
 
-//aggancio il container in cui successivamente andrò a scrivere con js
-// 1. inizializzo e aggancio usando l'id
-const container = document.getElementById('container');
-console.log('ho agganciato:',container);
 
+/*
+<!-- una per lanciare un ciclo su ogni elemento dell'array, che chiama la seconda passando il singolo oggetto come parametro -->
 
-//do una stringa vuota al container per pulirlo
-// 1. utilizzo innerHtml che va a scrivere sull'html
-container.innerHTML = '';
+<!-- la seconda accetta un parametro (che sarà l'oggetto post), crea il codice HTML e lo restituisce indietro -->
+ */
 
 
 
-//faccio un ciclo di lunghezza pari all'array in cui:
-for(let i = 0; i < posts.length; i++){
-    console.log('iterazione:',i);
+/*
+ 1. creo una funzione che legga tutto l'array di oggetti
+ 2. creo una funzione che si occuperà della generazione dei post
+ 3. stampo tutto
+ */
+
+loopFor();
+function loopFor(){
+    //ciclo la base dati con un ciclo for
+    for(let onePost of posts){
+        //delego a una funzione la creazione dell'html di ogni post
+        printPost(post);
+    }
+    //appendo al container il post
+    container.append(post);
+
+}
+
+
+//creo la seconda funzione
+
+
+function printPost(post){
+    //seleziono dove devo stampare il post
+    const container = document.getElementById('container');
+    console.log('ho agganciato:',container);
     //creo un elemento div che sarà la struttura base del post
     const post = document.createElement('div');
     console.log('elemento creato:',post);
@@ -119,34 +139,32 @@ for(let i = 0; i < posts.length; i++){
             </div>            
         </div>
     `;
-
-    //appendo al container il post
-    container.append(post);
 }
+
+
+
+
 
 
 /**
  ****BONUS:**
 1. Rendiamo il tasto “Mi Piace” cliccabile con incremento del counter dei likes.
 2. Al click su un pulsante “Mi Piace” di un post, incrementare il contatore di like al post e cambiare colore al testo del bottone disattivando il pulsante
- */
+
 
 
 //definisco un contatore di like
 let like = 80;
+console.log('numero like prima del click:',like);
 
-console.log('numero like:',like);
 //aggancio il pulsante “Mi Piace” e gli aggiungo l'evento click
-
 const btnLikes = document.querySelector('.like-button');
 btnLikes.addEventListener('click',function(){
     console.log('click');
-    //se clicco sul btnLike do un like
-    //aggancio l'id dei likes
-    //const like = document.getElementById('like-counter-1');
-    //console.log('like',like);
-
+    //al click il contatore like si incrementa
     like++;
+    console.log('numero like dopo il click:',like)
+    //aggancio l'id del contatore dei like dall'html
 
 
 
@@ -155,6 +173,14 @@ btnLikes.addEventListener('click',function(){
 
 
 //l'evento click non funziona piu e di conseguenza non aumento piu il numero dei likes
+
+
+
+
+ */
+
+
+
 
  
 
